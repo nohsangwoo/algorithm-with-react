@@ -4,7 +4,7 @@ function GCD() {
   // 일반적인 최대공약수 구하는 방법
   const GCD_NOMAL = (a, b) => {
     const min_Num = Math.min(a, b);
-    console.log(min_Num);
+
     let g = 1;
     for (let i = 2; i <= min_Num; i++) {
       if (a % i === 0 && b % i === 0) {

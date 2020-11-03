@@ -7,7 +7,7 @@ function PrimeNumber() {
   const [SEinput, setSEInput] = useState("");
   const [SEprimeState, setSEPrimeState] = useState([]);
 
-  // 소수인지?확인해주는 함수
+  // ------------------------소수인지?확인해주는 함수-----------------------------------------------
   const checkPrimeNumber = (isPrimeNumber) => {
     //   소수는 2보다 크거나 같고 N/2보다 작거나 같은 자연수로 나누어 떨어지면 안됨
     let i = 0;
@@ -38,7 +38,7 @@ function PrimeNumber() {
 
   const handleCheckPrime = (e) => {
     e.preventDefault();
-    // console.log("checkPrime");
+
     const isPrimeNumber = checkPrimeNumber(parseInt(CPinput));
 
     setPrimeState(
@@ -49,7 +49,7 @@ function PrimeNumber() {
     setCPInput("");
   };
 
-  // 에라토스테네스의 체
+  // ------------------------------------------에라토스테네스의 체--------------------------------------------------
 
   // 1부터 N까지 범위안에 들어가는 모든 소수를 구하기
   const sieveOfEratosthenes = (maxNum) => {
@@ -60,16 +60,17 @@ function PrimeNumber() {
     let pn = 0;
 
     //지워졌으면 true
-    const check = Array.from({ length: 101 }, (v = false, i) => {
+    const check = Array.from({ length: parseInt(maxNum) }, (v = false, i) => {
+      // 첫번째 인자는 매번 전해지는 값 , 두번째 인자는 ++되는 index
       // console.log(v, i);
       return v;
     });
 
-    for (let i = 2; i < maxNum; i++) {
+    for (let i = 2; i <= maxNum; i++) {
       if (check[i] === false) {
         {
           prime[pn++] = i;
-          for (let j = i * i; j < maxNum; j += i) {
+          for (let j = i * 2; j <= maxNum; j += i) {
             check[j] = true;
           }
         }
