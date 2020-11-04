@@ -1,7 +1,7 @@
 import Modular from "./Modular_Arithmetic";
 import GCD from "./GCD";
 import PrimeNumber from "./PrimeNumber";
-
+import BruteForce from "./BruteForce";
 function App() {
   return (
     <div className="App">
@@ -12,6 +12,10 @@ function App() {
       <hr />
 
       <PrimeNumber></PrimeNumber>
+
+      <hr />
+
+      <BruteForce></BruteForce>
     </div>
   );
 }
